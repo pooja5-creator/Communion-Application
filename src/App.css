@@ -1,0 +1,65 @@
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.shadowGive{
+ 
+    box-shadow: 1px 2px 8px rgb(255, 172, 181);
+}
+.shadowGive2{
+    box-shadow: 0px 10px 13px rgb(19, 18, 18);
+}
+.backgroundColor{
+    background: linear-gradient(120deg,white,rgb(151, 228, 228),white);
+}
+.shadowLeft{
+    box-shadow: inset 20px 0 20px  rgb(210, 207, 207),
+                  -10px 0 20px  rgb(210, 207, 207);
+
+}
+.shadowBottom{
+    box-shadow: inset 20px -60px 20px  rgb(20, 13, 13),
+                  -10px 0 15px  rgb(139, 153, 159);
+
+}
+.backGroundImg{
+    background-image: url('/src/assets/pexels-fauxels-3184357.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.backGroundImg2{
+    background-image: url('/src/assets/pexels-marcus-aurelius-4064027.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.shadowGive2:hover{
+   
+    box-shadow: 0px 5px  10px rgb(110, 109, 109);
+}
+.backGroundColor{
+    background: linear-gradient(black,rgb(236, 232, 232),rgb(232, 230, 230));
+}
+
+.backGroundColor2{
+    background: linear-gradient(130deg,rgb(255, 172, 181),rgb(196, 228, 255),white);
+}
+.backGroundColor3{
+    background: linear-gradient(180deg,rgb(20, 22, 31),rgb(107, 106, 106));
+}
+.animationClass{
+    animation: loading 2s linear infinite;
+}
+@keyframes loading {
+    0%{
+     transform: scale(0);
+    }
+    50%{
+     transform: scale(1);
+    }
+    100%{
+     transform: scale(0);
+    }
+}

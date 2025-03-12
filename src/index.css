@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+.linksClass{
+    @apply transition-all duration-400 ease-linear  border-b-0 border-x-0
+     font-semibold text-[23px]
+}

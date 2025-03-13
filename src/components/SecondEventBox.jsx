@@ -29,7 +29,7 @@ export default function SecondEventBox() {
         delay: 0.3,
         ease: "easeOut",
       }}
-      className="w-full min-h-[300px] flex justify-center items-center gap-6 flex-col px-1"
+      className="w-full min-h-[300px] flex justify-center items-center gap-6 mt-[40px] flex-col px-1"
     >
       <h1 className="text-[25px] sm:text-4xl text-center font-bold text-zinc-900">
         Discover What Sets Communion Events Apart

@@ -5,32 +5,30 @@ export default function AddEvents({ onEventAdded }) {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const [date, setDate] = useState('');
-  const [img, setImg] = useState('');
+  const [image, setImg] = useState('');
   const [description, setDescription] = useState('');
   const [errorData, setErrorData] = useState({});
   const [eventList, setEventList] = useState([]); // Local event list
 
-  // Validation function
   const validation = (formData) => {
     const errors = {};
     if (formData.title.trim() === '') errors.title = 'Title is required';
     if (formData.date.trim() === '') errors.date = 'Date is required';
     if (formData.category.trim() === '') errors.category = 'Category is required';
-    if (formData.img.trim() === '') errors.img = 'Image is required';
+    if (formData.image.trim() === '') errors.image = 'Image is required';
     if (formData.description.trim() === '') errors.description = 'Description is required';
 
     setErrorData(errors);
     return errors;
   };
 
-  // Handle form submission
   const handleValues = (e) => {
     e.preventDefault();
-    const formData = { title, category, date, img, description };
+    const formData = { title, category, date, image: image, description };
     const errors = validation(formData);
     if (Object.keys(errors).length > 0) return;
     setEventList((prevList) => [...prevList, formData]);
-    // https://api.jsonbin.io/v3/b/67d048f18960c979a56f9371
+   
     fetch('https://api.jsonbin.io/v3/b/67d1c3d78561e97a50eaa974', {
       method: 'PUT',
       headers: {
@@ -44,7 +42,6 @@ export default function AddEvents({ onEventAdded }) {
         return res.json();
       })
       .then((response) => {
-        console.log('Uploaded:', response.record);
         onEventAdded(formData);
       })
       .catch((error) => console.error('Fetch error:', error));
@@ -98,9 +95,9 @@ export default function AddEvents({ onEventAdded }) {
         <InputField
           label="Image"
           placeholder="Paste Image URL Here..."
-          value={img}
+          value={image}
           onChange={(e) => setImg(e.target.value)}
-          error={errorData.img}
+          error={errorData.image}
         />
         <InputField
           label="Description"

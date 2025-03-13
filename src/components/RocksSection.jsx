@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-export default function RocksSection() {
+export default function RocksSection({serviceRef}) {
     const data = [
         {
             icon: <i className="fa-solid fa-group-arrows-rotate"></i>,
@@ -20,7 +20,7 @@ export default function RocksSection() {
     ]
 
  return (
-        <div className='max-w-[1420px] mx-auto min-h-[400px] mt-[100px] bg-zinc-900'>
+        <div className='max-w-[1420px] mx-auto min-h-[400px] mt-[100px] scroll-mt-[180px] bg-zinc-900 ' ref={serviceRef}>
             <div className='max-w-[1200px] h-full  mx-auto px-2 py-5 lg:p-10 flex justify-center items-center gap-7 flex-col'>
                 <h1 className='text-[35px] sm:text-4xl font-semibold text-gray-100 text-center'>Why Communion Rocks!</h1>
                 <div className='w-full mt-6 min-h-[350px] flex justify-center items-center gap-5  xl:px-10  flex-col lg:flex-row'>

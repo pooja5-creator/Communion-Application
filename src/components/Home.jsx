@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import HeroSection from './HeroSection';
 import RocksSection from './RocksSection';
@@ -20,6 +20,7 @@ export default function Home() {
   useEffect(()=>{
       window.scrollTo(0,0)
     },[])
+    const serviceRef=useRef(null)
   return (
     <div className='w-full min-h-[300px]'>
       <div className='max-w-[1420px] min-h-[250px] mx-auto flex justify-center items-center flex-col gap-2'>
@@ -32,8 +33,8 @@ export default function Home() {
         <div className='w-[70%] mt-2 h-[2px] backgroundColor'></div>
       </div>
 
-      <motion.div {...animationProps}><HeroSection /></motion.div>
-      <motion.div {...animationProps}><RocksSection /></motion.div>
+      <motion.div {...animationProps}><HeroSection serviceRef={serviceRef}/></motion.div>
+      <motion.div {...animationProps}><RocksSection serviceRef={serviceRef}/></motion.div>
       <motion.div {...animationProps}><Conversion /></motion.div>
       <motion.div {...animationProps}><InsipringSection /></motion.div>
       <motion.div {...animationProps}><Engagement /></motion.div>

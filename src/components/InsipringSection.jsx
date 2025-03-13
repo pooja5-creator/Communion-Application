@@ -5,6 +5,7 @@ import EventImg2 from "/src/assets/pexels-marcus-aurelius-4064027.jpg";
 import EventImg3 from "/src/assets/communityImg-3.jpg";
 import EventImg4 from "/src/assets/communityImg-2.jpg";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 export default function InsipringSection() {
   const num = [1, 2, 3, 4];
   const data = [
@@ -68,9 +69,9 @@ export default function InsipringSection() {
                 Trusted by Over 15k+ Individuals Worldwide
               </p>
             </div>
-            <button className="bg-black px-4 sm:px-7 py-1 sm:py-2 text-xl rounded-xl text-sky-400  ">
+           <Link to='/events'> <button className="bg-black px-4 cursor-pointer hover:bg-white hover:text-sky-400 transition-all duration-300  ease-linear sm:px-7 py-1 sm:py-2 text-xl rounded-xl text-sky-400  ">
               Explore Events
-            </button>
+            </button></Link>
           </div>
         </div>
 

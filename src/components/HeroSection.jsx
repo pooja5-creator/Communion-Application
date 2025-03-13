@@ -5,7 +5,7 @@ import Img2 from '/src/assets/small-card-2.bd207a83f52c1a02bbc0.png'
 import CommunityImg1 from '/src/assets/communityImg-1.jpg'
 import CommunityImg2 from '/src/assets/communityImg-2.jpg'
 import CommunityImg3 from '/src/assets/communityImg-3.jpg'
-export default function HeroSection() {
+export default function HeroSection({serviceRef}) {
   const images = [
     {
       img: CommunityImg1
@@ -17,6 +17,10 @@ export default function HeroSection() {
       img: CommunityImg3
     },
   ]
+
+  const handleScrollToService=()=>{
+    serviceRef.current.scrollIntoView({ behavior: "smooth" })
+  }
   return (
     <motion.div className='w-full min-h-[250px] ' >
       <div className='max-w-[1200px] h-full  mx-auto flex justify-center  items-center gap-1 sm:gap-3 flex-col md:flex-row '>
@@ -37,7 +41,7 @@ export default function HeroSection() {
                 <h1 className='text-[15px] text-zinc-900 z-50 relative'>8+ more</h1>
               </div>
             </div>
-            <div className='w-[190px] sm:w-[200px] md:w-[170px] lg:w-[200px] h-[40px] font-semibold flex mt-6 justify-center items-center rounded-2xl bg-zinc-900 text-sky-400'>View Our Services</div>
+            <div className='w-[190px] sm:w-[200px] md:w-[170px] lg:w-[200px] hover:opacity-90 transition-all duration-300 ease-in-out cursor-pointer h-[40px] font-semibold flex mt-6 justify-center items-center rounded-2xl bg-zinc-900 text-sky-400' onClick={handleScrollToService}>View Our Services</div>
 
           </div>
 
